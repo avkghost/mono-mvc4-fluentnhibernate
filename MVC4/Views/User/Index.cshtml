@@ -13,26 +13,25 @@
 
 
 @using (Html.BeginForm("Index", "User", FormMethod.Get))
-{                                                                                                                                      
-    <p>                                                                                                                                
+{
+    <p>
         Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-        <input type="submit" value="Search" />                                                                                        
+        <input type="submit" value="Search" />
     </p>
 }
 <table class="table">
     <tr>
         <th>
-            First Name
+        	@Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.FirstNameSortParam, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
-            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.LastNameSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
-		<th>
+        <th>
             @Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th></th>
     </tr>
-
 
     @foreach (var item in Model)
     {

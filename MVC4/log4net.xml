@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<log4net>
+  <appender name="FileAppender" type="log4net.Appender.RollingFileAppender">
+    <param name="File" value="log4net_applog.log" />
+    <param name="DatePattern" value="yyyy.MM.dd" />
+    <param name="RollingStyle" value="Size" />
+    <param name="maxSizeRollBackups" value="10" />
+    <param name="maximumFileSize" value="100KB" />
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern" value="%date{yyyy-MM-dd HH:mm:ss ffff} [%-3t] %-5p %logger{1}.%method: %message%newline" />
+    </layout>
+  </appender>
+  <root>
+    <!-- OFF, FATAL, ERROR, WARN, DEBUG, INFO, ALL -->
+    <level value="WARN" />
+    <appender-ref ref="FileAppender" />
+  </root>
+</log4net>
+

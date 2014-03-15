@@ -13,20 +13,27 @@ using NHibernate.Linq;
 using MVC4.Helpers;
 using MVC4.Models;
 
+using log4net;
+
 namespace MVC4.Controllers
 {
     public class UserController : Controller
     {
+		public static readonly ILog log = LogManager.GetLogger(typeof(UserController));
+
 		// GET: /User/
 		public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
 			if (String.IsNullOrEmpty (sortOrder)) {
-				sortOrder = "name_desc"; 
+				sortOrder = "lname_desc"; 
 			}
 
 			ViewBag.CurrentSort = sortOrder;
-			ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+			ViewBag.FirstNameSortParam = sortOrder == "FirstName" ? "fname_desc" : "FirstName";
+			ViewBag.LastNameSortParm = sortOrder == "LastName" ? "lname_desc" : "LastName";
 			ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+			log.Info (string.Format ("sortOrder: {0}", sortOrder));
 
 			int pageSize = 10;
 			int pageNumber = (page ?? 1);
@@ -53,7 +60,13 @@ namespace MVC4.Controllers
 
 				switch (sortOrder)
 				{
-				case "name_desc":
+				case "FirstName":
+					users = users.OrderBy (u => u.FirstName);
+					break;
+				case "fname_desc":
+					users = users.OrderByDescending (u => u.FirstName);
+					break;
+				case "lname_desc":
 					users = users.OrderByDescending(u => u.LastName);
 					break;
 				case "Date":

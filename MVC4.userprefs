@@ -1,12 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 3.2.7 ((no/40f92d5)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MVC4/Controllers/UserController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MVC4/Global.asax.cs">
     <Files>
-      <File FileName="MVC4/Controllers/HomeController.cs" Line="20" Column="19" />
-      <File FileName="MVC4/Helpers/NHibernateHelper.cs" Line="1" Column="1" />
-      <File FileName="MVC4/Drivers/MonoSQLiteDriver.cs" Line="1" Column="1" />
+      <File FileName="MVC4/Controllers/UserController.cs" Line="18" Column="27" />
       <File FileName="MVC4/Configurations/MonoSQLiteConfiguration.cs" Line="1" Column="1" />
-      <File FileName="MVC4/Controllers/UserController.cs" Line="208" Column="31" />
+      <File FileName="MVC4/Global.asax.cs" Line="29" Column="1" />
+      <File FileName="MVC4/Web.config" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

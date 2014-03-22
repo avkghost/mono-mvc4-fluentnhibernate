@@ -25,30 +25,46 @@ namespace MVC4.Helpers
 
 		private static void InitializeSessionFactory()
 		{
-			//			_sessionFactory = Fluently.Configure()
-			//				.Database(MsSqlConfiguration.MsSql2008
-			//					.ConnectionString(
-			//						@"Server=localhost\SQLExpress;Database=SimpleNHibernate;Trusted_Connection=True;")
-			//					.ShowSql()
-			//				)
-			//				.Mappings(m =>
-			//					m.FluentMappings
-			//					.AddFromAssemblyOf<Car>())
-			//				.ExposeConfiguration(cfg => new SchemaExport(cfg)
-			//					.Create(true, true))
-			//				.BuildSessionFactory();
-
+			/*
+			_sessionFactory = Fluently.Configure()
+				.Database(MsSqlConfiguration.MsSql2008
+					.ConnectionString(
+					@"Server=localhost\SQLExpress;Database=SimpleNHibernate;Trusted_Connection=True;")
+					.ShowSql()
+				)
+			.Mappings(m =>
+					m.FluentMappings
+					.AddFromAssemblyOf<Car>())
+				.ExposeConfiguration(cfg => new SchemaExport(cfg)
+					.Create(true, true))
+				.BuildSessionFactory();
+				*/
+			/*
 			_sessionFactory = Fluently.Configure ()
 				.Database (MonoSQLiteConfiguration.Standard
 					.UsingFile (@"MVC4.sqlite")
 				)
 				.Mappings (m => m.FluentMappings
 					.AddFromAssemblyOf<User> ())
-//				.ExposeConfiguration(cfg => new SchemaExport(cfg)
-//					.Create(true, true))
 				.ExposeConfiguration(cfg=>new SchemaUpdate(cfg)
 					.Execute(true, true))
 				.BuildSessionFactory ();
+				*/
+				
+			_sessionFactory = Fluently.Configure()
+				.Database(PostgreSQLConfiguration.PostgreSQL82
+					.ConnectionString(c => c
+					                  .Host("localhost")
+					                  .Port(5432)
+					                  .Database("test")
+					                  .Username("test")
+					                  .Password("test")))
+				.Mappings(m => m.FluentMappings
+					.AddFromAssemblyOf<User> ())
+				.ExposeConfiguration(cfg=>new SchemaUpdate(cfg)
+					.Execute(true, true))
+				.BuildSessionFactory();
+
 		}
 
 		public static ISession OpenSession()

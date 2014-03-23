@@ -125,6 +125,10 @@
     <Reference Include="PushSharp.WindowsPhone">
       <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.WindowsPhone.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>False</Private>
+      <Package>nunit</Package>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -135,6 +139,9 @@
     <Folder Include="Drivers\" />
     <Folder Include="Views\User\" />
     <Folder Include="App_Start\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Generics\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -152,6 +159,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="Controllers\PushController.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\Truck.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationMap.cs" />
+    <Compile Include="Models\DriverMap.cs" />
+    <Compile Include="Models\TruckMap.cs" />
+    <Compile Include="Generics\Repository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Generics\UnitOfWork.cs" />
+    <Compile Include="Tests\TrucksTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />

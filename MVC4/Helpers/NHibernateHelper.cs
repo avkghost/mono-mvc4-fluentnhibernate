@@ -14,7 +14,7 @@ namespace MVC4.Helpers
 	{
 		private static ISessionFactory _sessionFactory;
 
-		private static ISessionFactory SessionFactory
+		public static ISessionFactory SessionFactory
 		{
 			get
 			{

@@ -1,12 +1,30 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MVC4/Global.asax.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 3.2.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MVC4/Controllers/UserController.cs">
     <Files>
-      <File FileName="MVC4/Controllers/UserController.cs" Line="18" Column="27" />
-      <File FileName="MVC4/Configurations/MonoSQLiteConfiguration.cs" Line="1" Column="1" />
-      <File FileName="MVC4/Global.asax.cs" Line="29" Column="1" />
-      <File FileName="MVC4/Web.config" Line="1" Column="1" />
+      <File FileName="MVC4/Helpers/NHibernateHelper.cs" Line="17" Column="9" />
+      <File FileName="MVC4/Controllers/PushController.cs" Line="7" Column="7" />
+      <File FileName="MVC4/Generics/Repository.cs" Line="11" Column="11" />
+      <File FileName="MVC4/Generics/UnitOfWork.cs" Line="2" Column="19" />
+      <File FileName="MVC4/Interfaces/IRepository.cs" Line="2" Column="34" />
+      <File FileName="MVC4/Interfaces/IUnitOfWork.cs" Line="4" Column="26" />
+      <File FileName="MVC4/Tests/TrucksTest.cs" Line="72" Column="4" />
+      <File FileName="MVC4/Controllers/UserController.cs" Line="178" Column="40" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="MVC4" expanded="True">
+            <Node name="Controllers" expanded="True">
+              <Node name="UserController.cs" selected="True" />
+            </Node>
+            <Node name="Generics" expanded="True" />
+            <Node name="Helpers" expanded="True" />
+            <Node name="Tests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
